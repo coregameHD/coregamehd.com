@@ -1,0 +1,46 @@
+---
+export const prerender = false;
+import { getImage } from 'astro:assets';
+import AppLayout from '../layouts/AppLayout';
+
+import background1 from '../assets/images/background1.webp';
+import background2 from '../assets/images/background2.webp';
+import background3 from '../assets/images/background3.webp';
+import background4 from '../assets/images/background4.webp';
+import background5 from '../assets/images/background5.webp';
+import background6 from '../assets/images/background6.webp';
+import background7 from '../assets/images/background7.webp';
+
+const backgrounds = [
+  background1,
+  background2,
+  background3,
+  background4,
+  background5,
+  background6,
+  background7
+];
+
+function getRandomBackground() {
+  return `bg-${Math.floor(Math.random() * backgrounds.length) + 1}`;
+}
+
+const optimizedBackgrounds = await Promise.all(
+  backgrounds.map((bg) =>
+    getImage({
+      src: bg,
+      width: 3500,
+    })
+  )
+);
+
+const backgroundMap = Object.fromEntries(
+  optimizedBackgrounds.map((bg, index) => [`bg-${index + 1}`, bg.src])
+);
+---
+
+<AppLayout
+  client:load
+  initialBg={getRandomBackground()}
+  backgroundMap={backgroundMap}
+/>

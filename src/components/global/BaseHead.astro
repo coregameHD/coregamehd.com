@@ -1,0 +1,90 @@
+---
+import '../../styles/global.css';
+import { AstroSeo } from '@astrolib/seo';
+import { getImage } from 'astro:assets';
+import background1 from '../../assets/images/background1.webp';
+import background2 from '../../assets/images/background2.webp';
+import background3 from '../../assets/images/background3.webp';
+import background4 from '../../assets/images/background4.webp';
+import background5 from '../../assets/images/background5.webp';
+import background6 from '../../assets/images/background6.webp';
+import background7 from '../../assets/images/background7.webp';
+
+const backgrounds = await Promise.all([
+  getImage({ src: background1, width: 3500 }),
+  getImage({ src: background2, width: 3500 }),
+  getImage({ src: background3, width: 3500 }),
+  getImage({ src: background4, width: 3500 }),
+  getImage({ src: background5, width: 3500 }),
+  getImage({ src: background6, width: 3500 }),
+  getImage({ src: background7, width: 3500 }),
+]);
+
+
+---
+
+<!-- Core meta tags -->
+<meta charset='UTF-8' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<meta
+  name='viewport'
+  content='width=device-width, initial-scale=1, maximum-scale=1'
+/>
+<meta name='author' content='coregameHD' />
+
+<!-- SEO Configuration - customize these values -->
+<AstroSeo
+  title={Astro.props.title || 'coregameHD Homepage'}
+  description={Astro.props.description ||
+    'coregameHD (รู้จักกันในนาม Kagami) ผู้หลงใหลเกมวิชวลโนเวล ภาษาญี่ปุ่น เทคโนโลยี และความเป็นมนุษย์'}
+  canonical={Astro.props.canonical || 'https://coregamehd.com'}
+  openGraph={{
+    url: Astro.props.openGraph?.url || 'https://coregamehd.com',
+    title: Astro.props.openGraph?.title || 'coregameHD Homepage',
+    description:
+      Astro.props.openGraph?.description ||
+      'coregameHD (รู้จักกันในนาม Kagami) ผู้หลงใหลเกมวิชวลโนเวล ภาษาญี่ปุ่น เทคโนโลยี และความเป็นมนุษย์',
+    images: [
+      {
+        url: '',
+        // og image here
+      },
+    ],
+    site_name: Astro.props.openGraph?.site_name || 'coregameHD',
+  }}
+/>
+
+<!-- Add your favicon files in public/images/ -->
+<link rel='apple-touch-icon' sizes='180x180' href='/favicon.svg' />
+<link
+  rel='icon'
+  type='image/png'
+  sizes='32x32'
+  href='/favicon.png'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='16x16'
+  href='/favicon.png'
+/>
+
+<!-- Theme colors for browsers -->
+<meta name='msapplication-TileColor' content='#7c3aed' />
+<meta name='theme-color' content='#7c3aed' />
+
+<!-- Auto-generated sitemap -->
+<link rel='sitemap' href='/sitemap-index.xml' />
+
+<!-- Preload background images for performance -->
+{
+  backgrounds.map((bg) => (
+    <link
+      rel='preload'
+      href={bg.src}
+      as='image'
+      type='image/webp'
+      fetchpriority='high'
+    />
+  ))
+}

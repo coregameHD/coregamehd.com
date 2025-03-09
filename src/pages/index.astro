@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LandingPage from '../components/LandingPage.astro';
+---
+
+<!-- 
+  恋は一瞬、妹は一生。
+  Love is ephemeral. Imouto is eternal.
+  ความรักชั่วครู่ น้องสาวชั่วชีวิต!
+-->
+<Layout
+  title="coregameHD's Homepage"
+  description='coregameHD (รู้จักกันในนาม Kagami) ผู้หลงใหลเกมวิชวลโนเวล ภาษาญี่ปุ่น เทคโนโลยี และความเป็นมนุษย์'
+  canonical='https://coregamehd.com'
+  openGraph={{
+    url: 'https://coregamehd.com',
+    title: "coregameHD's Homepage",
+    description:
+      'coregameHD (รู้จักกันในนาม Kagami) ผู้หลงใหลเกมวิชวลโนเวล ภาษาญี่ปุ่น เทคโนโลยี และความเป็นมนุษย์',
+    site_name: 'coregameHD.com',
+  }}
+>
+  <LandingPage />
+</Layout>

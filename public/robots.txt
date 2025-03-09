@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coregamehd.com/sitemap-index.xml
+
+# Avoid API routes
+Disallow: /api/
