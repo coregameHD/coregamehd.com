@@ -1,6 +1,8 @@
 # coregameHD.com 
 (codename: coregamehd-homepage)
 
+![Screenshot](https://github.com/user-attachments/assets/5b408eaa-292c-45a6-bd63-918232a3827a)
+
 coregameHD's personal portfolio website. Design inspired by macOS, featuring dynamic backgrounds and responsive dock interface.
 
 ## Tech Stack
@@ -10,7 +12,7 @@ coregameHD's personal portfolio website. Design inspired by macOS, featuring dyn
 - [TypeScript](https://www.typescriptlang.org)
 - [Tailwind CSS](https://tailwindcss.com)
 
-## วิธีติดตั้ง
+## How to install | วิธีติดตั้ง
 
 1. ทำการ Clone repo นี้
    `git clone https://github.com/coregameHD/coregamehd.com`
