@@ -246,7 +246,7 @@ export default function MacToolbar() {
                           (Github)
                         </a>
                       </div>
-                      <div className='text-xs text-gray-400'>Version: 3.0.1</div>
+                      <div className='text-xs text-gray-400'>Version: 3.1.0</div>
                       <div className='text-xs text-gray-400'>Last updated: 09/03/2025</div>
                     </div>
                   </div>

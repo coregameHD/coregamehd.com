@@ -1,8 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaRegFolderClosed } from 'react-icons/fa6';
 
 export default function MacTerminal() {
   const [currentView, setCurrentView] = useState<'welcome' | 'about' | 'skills' | 'contact' | 'english'>('welcome');
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleDocumentClick = () => {
+      if (!isVisible) {
+        setIsVisible(true);
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+    return () => document.removeEventListener('click', handleDocumentClick);
+  }, [isVisible]);
+
+  const handleControlClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsVisible(false);
+  };
 
   const Divider = () => (
     <div className="py-2">
@@ -217,14 +234,13 @@ export default function MacTerminal() {
     }
   };
 
-  //note: ใส่ backdrop-blur-md หรือ backdrop-blur-sm ในบรรทัดเดียวกับ bg-black/80 เพื่อเบลอพื้นหลัง terminal
   return (
-    <div className='fixed sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:mb-32 w-[95vw] sm:w-auto top-12 left-1/2 -translate-x-1/2'>
+    <div className={`fixed sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:mb-32 w-[95vw] sm:w-auto top-12 left-1/2 -translate-x-1/2 ${!isVisible ? 'hidden' : ''}`}>
       <div className='bg-black/80 backdrop-blur-sm w-full sm:w-[720px] h-[calc(100vh-9rem)] sm:h-[480px] rounded-lg overflow-hidden shadow-lg'>
         <div className='bg-gray-800 h-8 sm:h-6 flex items-center space-x-2 px-4'>
-          <div className='w-3 h-3 rounded-full bg-red-500'></div>
-          <div className='w-3 h-3 rounded-full bg-yellow-500'></div>
-          <div className='w-3 h-3 rounded-full bg-green-500'></div>
+          <div onClick={handleControlClick} className='w-3 h-3 rounded-full bg-red-500 cursor-pointer hover:bg-red-600'></div>
+          <div onClick={handleControlClick} className='w-3 h-3 rounded-full bg-yellow-500 cursor-pointer hover:bg-yellow-600'></div>
+          <div onClick={handleControlClick} className='w-3 h-3 rounded-full bg-green-500 cursor-pointer hover:bg-green-600'></div>
           <span className='text-sm text-gray-300 flex-grow text-center font-semibold flex items-center justify-center gap-2'>
             <FaRegFolderClosed size={14} className='text-gray-300' />
             profile ⸺ coregamehd.com
