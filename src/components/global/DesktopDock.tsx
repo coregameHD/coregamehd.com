@@ -21,9 +21,9 @@ interface CustomIconButtonProps {
   bgColor?: string;
 }
 
-const profileIcon = '/src/assets/icons/profile_ran.webp';
-const kagamiVNIcon = '/src/assets/icons/profile_kagamivisualnovel.webp';
-const kagamiNihongoIcon = '/src/assets/icons/profile_kagaminihongo.webp';
+const profileIcon = '/icons/profile_ran.webp';
+const kagamiVNIcon = '/icons/profile_kagamivisualnovel.webp';
+const kagamiNihongoIcon = '/icons/profile_kagaminihongo.webp';
 
 export default function DesktopDock() {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);

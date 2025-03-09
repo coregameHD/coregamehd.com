@@ -1,5 +1,5 @@
 # coregameHD.com 
-(Project code: coregamehd-homepage)
+(codename: coregamehd-homepage)
 
 coregameHD's personal portfolio website. Design inspired by macOS, featuring dynamic backgrounds and responsive dock interface.
 

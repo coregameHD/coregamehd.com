@@ -7,7 +7,7 @@ import {
   IoCellular,
 } from 'react-icons/io5';
 
-const profileIcon = '/src/assets/icons/profile_ran.webp';
+const profileIcon = '/icons/profile_ran.webp';
 
 export default function MacToolbar() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -246,7 +246,7 @@ export default function MacToolbar() {
                           (Github)
                         </a>
                       </div>
-                      <div className='text-xs text-gray-400'>Version: 3.0.0</div>
+                      <div className='text-xs text-gray-400'>Version: 3.0.1</div>
                       <div className='text-xs text-gray-400'>Last updated: 09/03/2025</div>
                     </div>
                   </div>

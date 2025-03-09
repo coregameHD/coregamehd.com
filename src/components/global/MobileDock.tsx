@@ -40,7 +40,7 @@ export default function MobileDock() {
         >
           <div className='w-14 h-14 bg-gradient-to-t from-violet-600 to-violet-500 rounded-xl flex items-center justify-center overflow-hidden'>
             <img
-              src='/src/assets/icons/profile_kagamivisualnovel.webp'
+              src='/icons/profile_kagamivisualnovel.webp'
               alt='Visual Novel'
               className='w-14 h-14 object-cover'
             />
@@ -53,7 +53,7 @@ export default function MobileDock() {
         >
           <div className='w-14 h-14 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center overflow-hidden'>
             <img
-              src='/src/assets/icons/profile_kagaminihongo.webp'
+              src='icons/profile_kagaminihongo.webp'
               alt='Nihongo'
               className='w-14 h-14 object-cover'
             />
