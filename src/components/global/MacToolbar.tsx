@@ -218,7 +218,7 @@ export default function MacToolbar() {
               About
             </button>
             {showAboutInfo && (
-              <div className='absolute top-6 left-0 bg-zinc-900/75 backdrop-blur-2xl rounded-lg py-3 w-[288px] shadow-lg border border-white/20'>
+              <div className='absolute top-6 left-0 bg-zinc-900/75 backdrop-blur-2xl rounded-lg py-3 w-[300px] shadow-lg border border-white/20'>
                 <div className='px-4 space-y-3'>
                   <div className='text-sm font-medium text-gray-100 flex items-start gap-2'>
                     <img 
@@ -246,8 +246,8 @@ export default function MacToolbar() {
                           (Github)
                         </a>
                       </div>
-                      <div className='text-xs text-gray-400'>Version: 3.1.0</div>
-                      <div className='text-xs text-gray-400'>Last updated: 09/03/2025</div>
+                      <div className='text-xs text-gray-400'>Version: 3.2.0</div>
+                      <div className='text-xs text-gray-400'>Last updated: 06/04/2025</div>
                     </div>
                   </div>
                 </div>
